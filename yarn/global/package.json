@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "create-astro": "^4.8.3",
+    "markmap-cli": "^0.17.0"
+  }
+}
