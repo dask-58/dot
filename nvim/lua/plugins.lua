@@ -16,10 +16,12 @@ require("lazy").setup({
 	    "onsails/lspkind.nvim",
 		event = { "VimEnter" },
 	},
+
     -- LSP manager
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+
 	-- Auto-completion engine
 	{
 		"hrsh7th/nvim-cmp",
@@ -34,6 +36,7 @@ require("lazy").setup({
 			require("config.nvim-cmp")
 		end,
 	},
+
     -- Auto - Pairs
     {
         'windwp/nvim-autopairs',
@@ -42,12 +45,15 @@ require("lazy").setup({
         -- use opts = {} for passing setup options
         -- this is equivalent to setup({}) function
     },
+
 	-- Code snippet engine
 	{
 		"L3MON4D3/LuaSnip",
 		version = "v2.*",
 	},
+
     -- Theme
-    "tanvirtin/monokai.nvim",
+    "loctvl842/monokai-pro.nvim",
+    "catppuccin/nvim",
 })
 
