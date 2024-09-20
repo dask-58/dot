@@ -13,6 +13,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     {
+	    'xeluxee/competitest.nvim',
+	    dependencies = 'MunifTanjim/nui.nvim',
+	    config = function() require('competitest').setup() end,
+    }, 
+    {
         'nvimdev/dashboard-nvim',
         event = 'VimEnter',
         config = function()
@@ -46,7 +51,6 @@ require("lazy").setup({
 			require("config.nvim-cmp")
 		end,
 	},
-
     -- Auto - Pairs
     {
         'windwp/nvim-autopairs',
