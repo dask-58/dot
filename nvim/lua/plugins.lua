@@ -69,5 +69,6 @@ require("lazy").setup({
     -- Theme
     "loctvl842/monokai-pro.nvim",
     "catppuccin/nvim",
+    "navarasu/onedark.nvim",
 })
 
