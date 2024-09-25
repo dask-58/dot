@@ -1,6 +1,6 @@
--- local colorscheme = 'monokai-pro'
+local colorscheme = 'monokai-pro-octagon'
 -- local colorscheme = 'catppuccin-mocha'
-local colorscheme = 'onedark'
+-- local colorscheme = 'onedark'
 
 local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not ok then
