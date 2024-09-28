@@ -1,4 +1,4 @@
-local colorscheme = 'monokai-pro-octagon'
+local colorscheme = 'darkblue'
 -- local colorscheme = 'catppuccin-mocha'
 -- local colorscheme = 'onedark'
 
