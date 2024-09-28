@@ -77,6 +77,7 @@ require("lazy").setup({
     "L3MON4D3/LuaSnip",
     version = "v2.*",
   },
+  "tamton-aquib/keys.nvim", 
   -- Theme
   "loctvl842/monokai-pro.nvim",
   "catppuccin/nvim",
