@@ -14,27 +14,82 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+   --  "mfussenegger/nvim-dap",
+    {
+        "kyazdani42/nvim-tree.lua",
+        enabled = false,
+        init = function()
+            vim.api.nvim_create_autocmd({ "BufEnter" }, {
+                callback = function(args)
+                    if vim.fn.isdirectory(args.match) == 1 then
+                        require("lazy").load({ plugins = { "nvim-tree.lua" } })
+                        vim.cmd("NvimTreeToggle")
+                        return true
+                    end
+                end,
+            })
+        end,
+        cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+        keys = { "<leader>nt", "<leader>nf" },
+        config = function()
+            require("config.nvim-tree")
+        end,
+    },
         {
             "nvim-lualine/lualine.nvim",
             dependencies = {"nvim-tree/nvim-web-devicons"}
         },
         {
-            "nvim-telescope/telescope.nvim",
-            dependencies = {"nvim-treesitter/nvim-treesitter"},
-            cmd = "Telescope",
-            opts = function()
-                return require "nvchad.configs.telescope"
-            end,
-            config = function(_, opts)
-                local telescope = require "telescope"
-                telescope.setup(opts)
-
-                -- load extensions
-                for _, ext in ipairs(opts.extensions_list) do
-                    telescope.load_extension(ext)
-                end
-            end
+        "nvim-telescope/telescope.nvim",
+        keys = { "<leader>f", "<leader><space>", "<leader>k", "<leader>T" },
+        cmd = "Telescope",
+        enabled = true,
+        dependencies = {
+            {
+                "nvim-telescope/telescope-frecency.nvim",
+                config = function()
+                    vim.keymap.set(
+                        "n",
+                        "<leader>fr",
+                        require("telescope").extensions.frecency.frecency,
+                        { desc = "Telescope: Frecency" }
+                    )
+                end,
+            },
+            {
+                "nvim-telescope/telescope-file-browser.nvim",
+                config = function()
+                    vim.keymap.set(
+                        "n",
+                        "<leader>f.",
+                        require("telescope").extensions.file_browser.file_browser,
+                        { desc = "Telescope: File browser" }
+                    )
+                end,
+            },
+            "nvim-telescope/telescope-fzf-native.nvim",
+            "nvim-telescope/telescope-dap.nvim",
+            {
+                "nvim-telescope/telescope-ui-select.nvim",
+                init = function()
+                    vim.ui.select = function(...)
+                        require("lazy").load({ plugins = { "telescope.nvim" } })
+                        vim.ui.select(...)
+                    end
+                end,
+            },
         },
+        config = function()
+            require("config.telescope")
+
+            require("telescope").load_extension("file_browser")
+            -- require("telescope").load_extension("dap")
+            -- require("telescope").load_extension("notify")
+            -- require("telescope").load_extension("fzf")
+            require("telescope").load_extension("frecency")
+            require("telescope").load_extension("ui-select")
+        end,
+    },
         {
             "xeluxee/competitest.nvim",
             dependencies = "MunifTanjim/nui.nvim",
