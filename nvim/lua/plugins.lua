@@ -64,6 +64,17 @@ require("lazy").setup({
                 require("config.nvim-cmp")
             end
         },
+        -- Dashboard
+        {
+            -- Go Glepnir!
+            "glepnir/dashboard-nvim",
+            event = "VimEnter",
+            enabled = true,
+            config = function()
+                require("config.dashboard")
+                vim.keymap.set("n", "<F3>", "<cmd>Dashboard<CR>", { desc = "Dashboard: open" })
+                end,
+        },
         -- Auto-Pairs
         {
             "windwp/nvim-autopairs",
@@ -87,6 +98,7 @@ require("lazy").setup({
         -- Key screen
         "tamton-aquib/keys.nvim",
         -- Theme
+        "rebelot/kanagawa.nvim",
         "loctvl842/monokai-pro.nvim",
         "catppuccin/nvim",
         "navarasu/onedark.nvim"

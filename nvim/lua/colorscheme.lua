@@ -1,4 +1,4 @@
-local colorscheme = 'darkblue'
+local colorscheme = 'kanagawa-wave'
 -- local colorscheme = 'catppuccin-mocha'
 -- local colorscheme = 'onedark'
 
