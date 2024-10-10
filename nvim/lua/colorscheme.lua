@@ -1,6 +1,7 @@
-local colorscheme = 'kanagawa-wave'
+-- local colorscheme = 'tokyonight-night'
+-- local colorscheme = 'kanagawa-wave'
 -- local colorscheme = 'catppuccin-mocha'
--- local colorscheme = 'onedark'
+local colorscheme = 'onedark'
 
 local ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 if not ok then

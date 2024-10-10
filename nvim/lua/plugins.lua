@@ -14,6 +14,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = {},
+    },
+    { 'echasnovski/mini.statusline', version = '*' },
    --  "mfussenegger/nvim-dap",
     {
         "kyazdani42/nvim-tree.lua",
@@ -159,4 +166,3 @@ require("lazy").setup({
         "navarasu/onedark.nvim"
     }
 )
-
