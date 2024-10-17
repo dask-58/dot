@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    {"karb94/neoscroll.nvim"},
     {
         "folke/tokyonight.nvim",
         lazy = false,
