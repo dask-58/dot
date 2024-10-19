@@ -1,16 +1,2 @@
-require('options')
-require('keymaps')
-require('plugins')
-require('colorscheme')
-require('lsp')
-require('competitest').setup()
-require('mini.statusline').setup()
-require('neoscroll').setup({})
-require('keys').setup {
-    enable_on_startup = true,
-    win_opts = {
-        width = 25,
-        -- etc
-    },
-    -- TODO: more options later
-}
+-- bootstrap lazy.nvim, LazyVim and your plugins
+require("config.lazy")
