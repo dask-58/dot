@@ -20,14 +20,10 @@ $cmd_duration\
 )
 [╰─](fg:arrow)$character\
 """
-# Add the modules you need
 
-# Disable the blank line at the start of the prompt
 add_newline = true
 
-
 palette = "normal"
-
 
 [palettes.normal]
 arrow = "#333533"
@@ -46,8 +42,6 @@ clang = "#caf0f8"
 duration = "#ce4257"
 text_color = "#EDF2F4"
 text_light = "#26272A"
-
-# I disabled some modules (Rust, Java...) since some things aren't installed in my machine, enable them if you need.
 
 [username]
 style_user = 'bold os'
