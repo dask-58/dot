@@ -3,6 +3,7 @@ format = """\
 $username\
 $os\
 $git_branch\
+$git_status\
 (\
     at \
     $directory\
@@ -58,7 +59,7 @@ show_always = true
 [os]
 format = "on [($name)]($style) "
 style = "bold blue"
-disabled = true
+disabled = false
 
 [os.symbols]
 Alpine = " "
@@ -92,7 +93,7 @@ truncate_to_repo = true
 read_only ="  "
 
 [time]
-disabled = true
+disabled = false
 format = "at [󱑈 $time]($style)"
 time_format = "%H:%M"
 style = "bold fg:time"
@@ -110,14 +111,14 @@ symbol = " "
 [git_status]
 format = '[ $all_status$ahead_behind ]($style)'
 style = "fg:text_color bg:git"
-disabled = true
+disabled = false
 
 [docker_context]
 disabled=true
 symbol = " "
 
 [package]
-disabled=true
+disabled = false
 
 [fill]
 symbol = " "
@@ -148,18 +149,18 @@ format = "[ $symbol$version ]($style)"
 style = "bg:java fg:text_light"
 version_format = "${raw}"
 symbol = " "
-disabled = true
+disabled = false
 
 [c]
 format = "[ $symbol($version(-$name)) ]($style)"
 style = "bg:clang fg:text_light"
 symbol = " "
 version_format = "${raw}"
-disabled=true
+disabled = false
 
 [rust]
 format ="[ $symbol$version ]($style)"
 style = "bg:rust fg:text_light"
 symbol = " "
 version_format = "${raw}"
-disabled=true
+disabled = false
