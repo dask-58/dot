@@ -1,1 +1,1 @@
-My dot files (in fact entire .config/ directory )
+My dot files , managed by stow
