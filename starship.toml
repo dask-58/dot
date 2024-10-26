@@ -12,9 +12,7 @@ $nodejs\
 $c\
 $java\
 $swift\
-$cpp\
 $rust\
-$ruby\
 $package\
 $cmd_duration\
 $line_break\
@@ -94,10 +92,6 @@ symbol = ' '
 [swift]
 style = 'orange'
 symbol = ' '
-
-[cpp]
-style = 'cyan'
-symbol = ' '
 
 [rust]
 style = 'orange'
