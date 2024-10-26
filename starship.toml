@@ -12,7 +12,6 @@ $nodejs\
 $c\
 $java\
 $swift\
-$assembly\
 $cpp\
 $rust\
 $ruby\
@@ -95,10 +94,6 @@ symbol = ' '
 [swift]
 style = 'orange'
 symbol = ' '
-
-[assembly]
-style = 'gray'
-symbol = '󰉿 '
 
 [cpp]
 style = 'cyan'
