@@ -131,13 +131,6 @@ symbol = " "
 version_format = "${raw}"
 style = "bg:python fg:text_light"
 
-[conda]
-format = "[ $symbol$environment ]($style)"
-style = "bg:conda fg:text_light"
-ignore_base = false
-disabled = false
-symbol = " "
-
 [java]
 format = "[ $symbol$version ]($style)"
 style = "bg:java fg:text_light"
