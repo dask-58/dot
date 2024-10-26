@@ -21,7 +21,7 @@ $battery\
 $character"""
 
 add_newline = true
-palette = 'nord_dark'
+palette = 'custom_dark'
 
 [directory]
 style = 'bold blue'
@@ -42,20 +42,20 @@ style_root = 'black bold'
 format = '[$user]($style) on '
 disabled = false
 show_always = true
-aliases = { "corpuser034g" = "matchai" }
 
 [git_branch]
-style = 'fg:green'
+style = 'fg:#50fa7b'
 symbol = ' '
 format = '[on](white) [$symbol$branch ]($style)'
 
 [git_status]
-style = 'fg:green'
+style = 'fg:#50fa7b'
 format = '([$all_status$ahead_behind]($style) )'
 
 [git_metrics]
 disabled = false
-added_style = 'fg:blue'
+added_style = 'fg:#8ae9fc'
+deleted_style = 'fg:#ff5555'
 format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [fill]
@@ -64,11 +64,11 @@ symbol = ' '
 [shell]
 zsh_indicator = 'zsh'
 unknown_indicator = 'mystery shell'
-style = 'cyan bold'
+style = '#8ae9fc bold'
 disabled = false
 
 [python]
-style = 'teal'
+style = '#8ae9fc'
 symbol = ' '
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = true
@@ -78,23 +78,23 @@ pyenv_prefix = ''
 symbol = ' '
 
 [nodejs]
-style = 'blue'
+style = '#bd92f8'
 symbol = ' '
 
 [c]
-style = 'light_blue'
+style = '#8ae9fc'
 symbol = ' '
 
 [java]
-style = 'purple'
+style = '#ff78c5'
 symbol = ' '
 
 [swift]
-style = 'orange'
+style = '#f0fa8b'
 symbol = ' '
 
 [rust]
-style = 'orange'
+style = '#ff78c5'
 symbol = ' '
 
 [package]
@@ -102,12 +102,12 @@ symbol = '󰏗 '
 
 [cmd_duration]
 min_time = 500
-style = 'fg:gray'
+style = '#bbbbbb'
 format = '[$duration]($style)'
 
 [time]
 format = '[$hour:$minute:$second]($style)'
-style = 'fg:yellow'
+style = '#f0fa8b'
 
 [battery]
 full_symbol = '🔋 '
@@ -116,42 +116,37 @@ discharging_symbol = '󰂃 '
 
 [[battery.display]]
 threshold = 10
-style = 'fg:red'
+style = 'fg:#ff5555'
 
 [[battery.display]]
 threshold = 30
-style = 'fg:yellow'
+style = 'fg:#f0fa8b'
 discharging_symbol = '💦 '
 
 [[battery.display]]
 threshold = 99
-style = 'fg:green'
+style = 'fg:#50fa7b'
 
-[palettes.nord_dark]
-dark_blue = '#5E81AC'
-blue = '#81A1C1'
-teal = '#8FBCBB'
-red = '#BF616A'
-orange = '#D08770'
-green = '#A3BE8C'
-yellow = '#EBCB8B'
-purple = '#B48EAD'
-gray = '#434C5E'
-light_blue = '#88C0D0'
-cyan = '#8FBCBB'
-black = '#2E3440'
-white = '#ECEFF4'
-
-[palettes.onedark]
-dark_blue = '#61afef'
-blue = '#56b6c2'
-red = '#e06c75'
-green = '#98c379'
-purple = '#c678dd'
-cyan = '#56b6c2'
-orange = '#be5046'
-yellow = '#e5c07b'
-gray = '#828997'
-white = '#abb2bf'
-black = '#2c323c'
+[palettes.custom_dark]
+background = '#1e1f28'
+foreground = '#f8f8f2'
+cursor = '#bbbbbb'
+selection_background = '#44475a'
+color0 = '#000000'
+color8 = '#545454'
+color1 = '#ff5555'
+color9 = '#ff5454'
+color2 = '#50fa7b'
+color10 = '#50fa7b'
+color3 = '#f0fa8b'
+color11 = '#f0fa8b'
+color4 = '#bd92f8'
+color12 = '#bd92f8'
+color5 = '#ff78c5'
+color13 = '#ff78c5'
+color6 = '#8ae9fc'
+color14 = '#8ae9fc'
+color7 = '#bbbbbb'
+color15 = '#ffffff'
+selection_foreground = '#1e1f28'
 
