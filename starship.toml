@@ -1,153 +1,168 @@
-format = """\
-[╭╴](fg:arrow)\
+format = """
 $username\
-$os\
+$shell\
+$directory\
 $git_branch\
 $git_status\
-(\
-    at \
-    $directory\
-)\
+$git_metrics\
+$fill\
+$python\
+$lua\
+$nodejs\
+$c\
+$java\
+$swift\
+$assembly\
+$cpp\
+$rust\
+$ruby\
+$package\
 $cmd_duration\
-(\
-    via \
-    $python\
-    $conda\
-    $nodejs\
-    $c\
-    $rust\
-    $java\
-)
-[╰─](fg:arrow)$character\
-"""
+$line_break\
+$time\
+$battery\
+$character"""
 
 add_newline = true
-
-palette = "normal"
-
-[palettes.normal]
-arrow = "#333533"
-os = "#16f4d0"
-os_admin = "#e4ff1a"
-directory = "#9ffff5"
-time = "#bdfffd"
-node = "#a5e6ba"
-git = "#f17f29"
-git_status = "#DFEBED"
-python = "#edf67d"
-conda = "#70e000"
-java = "#F86279"
-rust = "#ffdac6"
-clang = "#caf0f8"
-duration = "#ce4257"
-text_color = "#EDF2F4"
-text_light = "#26272A"
-
-[username]
-style_user = 'bold os'
-style_root = 'bold os_admin'
-format = '[  $user](fg:$style) '
-disabled = false
-show_always = true
-
-[os]
-format = "on [($name)]($style) "
-style = "bold blue"
-disabled = false
-
-[os.symbols]
-Alpine = " "
-Arch = " "
-Debian = " "
-EndeavourOS = " "
-Fedora = " "
-Linux = " "
-Macos = " "
-Manjaro = " "
-Mint = " "
-NixOS = " "
-openSUSE = " "
-Pop = " "
-SUSE = " "
-Ubuntu = " "
-Windows = " "
-
-[character]
-success_symbol = "[󰍟](fg:arrow)"
-error_symbol = "[󰍟](fg:red)"
+palette = 'nord_dark'
 
 [directory]
-format = "[$path](bold $style)[$read_only]($read_only_style) "
-truncation_length = 2
-style = "fg:directory"
-read_only_style = "fg:directory"
-before_repo_root_style = "fg:directory"
-truncation_symbol = "…/"
-truncate_to_repo = true
-read_only ="  "
+style = 'bold blue'
+format = 'at [$path ]($style)'
+truncation_length = 3
+truncation_symbol = '…/'
+truncate_to_repo = false
 
-[time]
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ''
+'Music' = ''
+'Pictures' = ''
+
+[username]
+style_user = 'bold yellow'
+style_root = 'black bold'
+format = '[$user]($style) on '
 disabled = false
-format = "at [󱑈 $time]($style)"
-time_format = "%H:%M"
-style = "bold fg:time"
-
-[cmd_duration]
-format = "took [ $duration]($style) "
-style = "bold fg:duration"
-min_time = 500
+show_always = true
+aliases = { "corpuser034g" = "matchai" }
 
 [git_branch]
-format = "via [$symbol$branch]($style) "
-style = "bold fg:git"
-symbol = " "
+style = 'fg:green'
+symbol = ' '
+format = '[on](white) [$symbol$branch ]($style)'
 
 [git_status]
-format = '[ $all_status$ahead_behind ]($style)'
-style = "fg:text_color bg:git"
-disabled = false
+style = 'fg:green'
+format = '([$all_status$ahead_behind]($style) )'
 
-[docker_context]
-disabled=true
-symbol = " "
-
-[package]
+[git_metrics]
 disabled = false
+added_style = 'fg:blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
 
 [fill]
-symbol = " "
+symbol = ' '
 
-[nodejs]
-format = "[ $symbol$version ]($style)"
-style = "bg:node fg:text_light"
-symbol = " "
-version_format = "${raw}"
-disabled=false
+[shell]
+zsh_indicator = 'zsh'
+unknown_indicator = 'mystery shell'
+style = 'cyan bold'
+disabled = false
 
 [python]
-disabled=false
-format = '[ ${symbol}${pyenv_prefix}(${version})( \($virtualenv\)) ]($style)'
-symbol = " "
-version_format = "${raw}"
-style = "bg:python fg:text_light"
+style = 'teal'
+symbol = ' '
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = true
+pyenv_prefix = ''
 
-[java]
-format = "[ $symbol$version ]($style)"
-style = "bg:java fg:text_light"
-version_format = "${raw}"
-symbol = " "
-disabled = false
+[lua]
+symbol = ' '
+
+[nodejs]
+style = 'blue'
+symbol = ' '
 
 [c]
-format = "[ $symbol($version(-$name)) ]($style)"
-style = "bg:clang fg:text_light"
-symbol = " "
-version_format = "${raw}"
-disabled = false
+style = 'light_blue'
+symbol = ' '
+
+[java]
+style = 'purple'
+symbol = ' '
+
+[swift]
+style = 'orange'
+symbol = ' '
+
+[assembly]
+style = 'gray'
+symbol = '󰉿 '
+
+[cpp]
+style = 'cyan'
+symbol = ' '
 
 [rust]
-format ="[ $symbol$version ]($style)"
-style = "bg:rust fg:text_light"
-symbol = " "
-version_format = "${raw}"
-disabled = false
+style = 'orange'
+symbol = ' '
+
+[package]
+symbol = '󰏗 '
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
+
+[time]
+format = '[$hour:$minute:$second]($style)'
+style = 'fg:yellow'
+
+[battery]
+full_symbol = '🔋 '
+charging_symbol = '⚡️ '
+discharging_symbol = '󰂃 '
+
+[[battery.display]]
+threshold = 10
+style = 'fg:red'
+
+[[battery.display]]
+threshold = 30
+style = 'fg:yellow'
+discharging_symbol = '💦 '
+
+[[battery.display]]
+threshold = 99
+style = 'fg:green'
+
+[palettes.nord_dark]
+dark_blue = '#5E81AC'
+blue = '#81A1C1'
+teal = '#8FBCBB'
+red = '#BF616A'
+orange = '#D08770'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+purple = '#B48EAD'
+gray = '#434C5E'
+light_blue = '#88C0D0'
+cyan = '#8FBCBB'
+black = '#2E3440'
+white = '#ECEFF4'
+
+[palettes.onedark]
+dark_blue = '#61afef'
+blue = '#56b6c2'
+red = '#e06c75'
+green = '#98c379'
+purple = '#c678dd'
+cyan = '#56b6c2'
+orange = '#be5046'
+yellow = '#e5c07b'
+gray = '#828997'
+white = '#abb2bf'
+black = '#2c323c'
+
