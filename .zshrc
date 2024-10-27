@@ -106,6 +106,8 @@ fi
 # The fuck configure
 eval $(thefuck --alias)
 
+#neofetch
+alias neofetch='neofetch --source /Users/dhruvkoli/phoenix.txt'
 
 # Sublime
 alias subl='open -a "Sublime Text"'
