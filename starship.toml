@@ -13,10 +13,9 @@ $c\
 $java\
 $swift\
 $rust\
-$package\
 $cmd_duration\
-$line_break\
 $time\
+$line_break\
 $battery\
 $character"""
 
@@ -124,7 +123,7 @@ style = 'fg:#f0fa8b'
 discharging_symbol = '💦 '
 
 [[battery.display]]
-threshold = 70
+threshold = 90
 style = 'fg:#50fa7b'
 
 [palettes.custom_dark]
