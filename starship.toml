@@ -1,151 +1,57 @@
+# ~/.config/starship.toml
+
 format = """
 $username\
-$shell\
+$hostname\
 $directory\
 $git_branch\
+$git_state\
 $git_status\
-$git_metrics\
-$fill\
-$python\
-$lua\
-$nodejs\
-$c\
-$java\
-$swift\
-$rust\
 $cmd_duration\
-$time\
 $line_break\
-$battery\
+$python\
 $character"""
 
-add_newline = true
-palette = 'custom_dark'
-
-[directory]
-style = 'bold blue'
-format = 'at [$path ]($style)'
-truncation_length = 3
-truncation_symbol = '…/'
-truncate_to_repo = false
-
-[directory.substitutions]
-'Documents' = '󰈙'
-'Downloads' = ''
-'Music' = ''
-'Pictures' = ''
-
 [username]
-style_user = 'bold yellow'
+style_user = 'red bold'
 style_root = 'black bold'
-format = '[$user]($style) on '
+format = '[$user]($style) '
 disabled = false
 show_always = true
+aliases = { "corpuser034g" = "matchai" }
+
+[directory]
+style = "blue"
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-style = 'fg:#50fa7b'
-symbol = ' '
-format = '[on](white) [$symbol$branch ]($style)'
+format = "[$branch]($style)"
+style = "bright-black"
 
 [git_status]
-style = 'fg:#50fa7b'
-format = '([$all_status$ahead_behind]($style) )'
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "cyan"
+conflicted = "​"
+untracked = "​"
+modified = "​"
+staged = "​"
+renamed = "​"
+deleted = "​"
+stashed = "≡"
 
-[git_metrics]
-disabled = false
-added_style = 'fg:#8ae9fc'
-deleted_style = 'fg:#ff5555'
-format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
-
-[fill]
-symbol = ' '
-
-[shell]
-zsh_indicator = 'zsh'
-unknown_indicator = 'mystery shell'
-style = '#8ae9fc bold'
-disabled = false
-
-[python]
-style = '#8ae9fc'
-symbol = ' '
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-pyenv_version_name = true
-pyenv_prefix = ''
-
-[lua]
-symbol = ' '
-
-[nodejs]
-style = '#bd92f8'
-symbol = ' '
-
-[c]
-style = '#8ae9fc'
-symbol = ' '
-
-[java]
-style = '#ff78c5'
-symbol = ' '
-
-[swift]
-style = '#f0fa8b'
-symbol = ' '
-
-[rust]
-style = '#ff78c5'
-symbol = ' '
-
-[package]
-symbol = '󰏗 '
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 [cmd_duration]
-min_time = 500
-style = '#bbbbbb'
-format = '[$duration]($style)'
+format = "[$duration]($style) "
+style = "yellow"
 
-[time]
-format = '[$hour:$minute:$second]($style)'
-style = '#f0fa8b'
-
-[battery]
-full_symbol = '🔋 '
-charging_symbol = '⚡️ '
-discharging_symbol = '󰂃 '
-
-[[battery.display]]
-threshold = 10
-style = 'fg:#ff5555'
-
-[[battery.display]]
-threshold = 30
-style = 'fg:#f0fa8b'
-discharging_symbol = '💦 '
-
-[[battery.display]]
-threshold = 90
-style = 'fg:#50fa7b'
-
-[palettes.custom_dark]
-background = '#1e1f28'
-foreground = '#f8f8f2'
-cursor = '#bbbbbb'
-selection_background = '#44475a'
-color0 = '#000000'
-color8 = '#545454'
-color1 = '#ff5555'
-color9 = '#ff5454'
-color2 = '#50fa7b'
-color10 = '#50fa7b'
-color3 = '#f0fa8b'
-color11 = '#f0fa8b'
-color4 = '#bd92f8'
-color12 = '#bd92f8'
-color5 = '#ff78c5'
-color13 = '#ff78c5'
-color6 = '#8ae9fc'
-color14 = '#8ae9fc'
-color7 = '#bbbbbb'
-color15 = '#ffffff'
-selection_foreground = '#1e1f28'
+[python]
+format = "[$virtualenv]($style) "
+style = "bright-black"
 
