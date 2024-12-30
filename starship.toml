@@ -22,6 +22,7 @@ aliases = { "corpuser034g" = "matchai" }
 
 [directory]
 style = "blue"
+format = '[in $path ]($style)'
 
 [character]
 success_symbol = "[❯](purple)"
