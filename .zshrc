@@ -103,20 +103,16 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# The fuck configure
-eval $(thefuck --alias)
-
-#neofetch
-alias neofetch='neofetch --source /Users/dhruvkoli/phoenix.txt'
-
-# Sublime
-alias subl='open -a "Sublime Text"'
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# for passing shadcn npx
+alias jaadu=NODE_TLS_REJECT_UNAUTHORIZED=0 npx
 
 # JAVA CONFIG
 export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=$JAVA_HOME/bin:$PATH
 
-eval "$(starship init zsh)"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh auto suggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
