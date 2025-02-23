@@ -1,5 +1,11 @@
 # `📁 dot`
 
+Clone the repository
+
+```sh
+git clone git@github.com:dask-58/dot ~/.config/dask-58/dot
+```
+
 ## `📁 dot/nvim`
 
 <a href="https://dotfyle.com/dask-58/dot-nvim"><img src="https://dotfyle.com/dask-58/dot-nvim/badges/plugins?style=flat" /></a>
