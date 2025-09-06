@@ -1,0 +1,5 @@
+theme = dark:NvimDark,light:catpuccin-latte
+
+font-family = "JetBrains Mono"
+
+font-size = 14
