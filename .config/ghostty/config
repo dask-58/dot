@@ -1,4 +1,4 @@
-theme = dark:NvimDark,light:catpuccin-latte
+theme = dark:Nvim Dark,light:Catppuccin Latte
 
 font-family = "JetBrains Mono"
 
