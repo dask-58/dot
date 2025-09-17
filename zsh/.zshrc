@@ -105,6 +105,9 @@ fi
 
 # for passing shadcn npx
 alias jaadu=NODE_TLS_REJECT_UNAUTHORIZED=0 npx
+alias gs=git status
+alias gp=git push
+alias src="source ~/.zshrc"
 
 # JAVA CONFIG
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -115,4 +118,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # zsh auto suggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH="$HOME/go/bin:$PATH"
 
